@@ -21,7 +21,9 @@ jobs:
               run: npm run build
 
             - name: zip create
-              run: zip -qq -r ./build-fe.zip ./dist
+              run: | 
+                cp appspec.yml deploy.sh ./dist/
+                zip -qq -r ./build-fe.zip ./dist
               shell: bash
 
             - name: Configure AWS credentials

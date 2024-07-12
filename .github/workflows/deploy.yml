@@ -20,6 +20,10 @@ jobs:
             - name: Build
               run: npm run build
 
+            - name: Generate Environment Variables File for Production
+              run: |
+                echo "${{ secrets.ENV_VARS }}" >> ./dist/.env
+
             - name: zip create
               run: | 
                 cp appspec.yml deploy.sh ./dist/

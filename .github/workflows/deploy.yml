@@ -21,8 +21,12 @@ jobs:
               run: npm run build
 
             - name: Generate Environment Variables File for Production
+              env:
+                VITE_API_URL: ${{ secrets.VITE_API_URL }}
+                VITE_SAMPLE: ${{ secrets.VITE_SAMPLE }}
               run: |
-                echo "${{ secrets.ENV_VARS }}" >> ./dist/.env
+                echo "VITE_API_URL=${VITE_API_URL}" >> ./dist/.env
+                echo "VITE_SAMPLE=${VITE_SAMPLE}" >> ./dist/.env
 
             - name: zip create
               run: | 

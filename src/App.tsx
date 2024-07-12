@@ -11,7 +11,7 @@ function App() {
     const apiUrl = import.meta.env.VITE_API_URL;
 
     axios
-        .get(apiUrl + "/v1/sample")
+        .get(apiUrl + "/api/v1/sample")
         .then((res) => {
             setData(res.data);
         })

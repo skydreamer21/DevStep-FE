@@ -11,7 +11,7 @@ function App() {
     const apiUrl = import.meta.env.VITE_API_URL;
 
     axios
-        .get(apiUrl + "/api/v1/sample")
+        .get(apiUrl + "/v1/sample")
         .then((res) => {
             setData(res.data);
         })
@@ -40,6 +40,7 @@ function App() {
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
             </div>
+            <p>API url : {apiUrl}</p>
             <p>From Server : {data}</p>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
